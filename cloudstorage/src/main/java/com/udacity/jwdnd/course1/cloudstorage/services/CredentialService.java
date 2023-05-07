@@ -19,6 +19,10 @@ public class CredentialService {
         this.credentialMapper = credentialMapper;
     }
 
+    public Credential getCredentialByID(Integer credentialID){
+        return this.credentialMapper.getCredentialByID(credentialID);
+    }
+
     public List<Credential> getAllCredentials(){
         ArrayList<Credential> allCredentials = (ArrayList<Credential>) this.credentialMapper.getAllCredentials();
 //        String encodedKey, decryptedPassword;

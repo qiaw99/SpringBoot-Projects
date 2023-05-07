@@ -11,6 +11,9 @@ public interface CredentialMapper {
     @Select("SELECT * FROM CREDENTIALS")
     public List<Credential> getAllCredentials();
 
+    @Select("SELECT * FROM CREDENTIALS where credentialid = #{credentialid}")
+    public Credential getCredentialByID(Integer credentialid);
+
     @Insert("INSERT INTO CREDENTIALS (url, username, _key, password, userid) VALUES(#{url}, #{username}, #{_key}, #{password}, #{userid})")
     @Options(useGeneratedKeys = true, keyProperty = "credentialid")
     int insert(Credential credential);

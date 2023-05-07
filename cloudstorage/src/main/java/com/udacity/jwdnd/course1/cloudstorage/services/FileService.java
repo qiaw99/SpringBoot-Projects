@@ -3,6 +3,7 @@ package com.udacity.jwdnd.course1.cloudstorage.services;
 import com.udacity.jwdnd.course1.cloudstorage.mapper.FileMapper;
 import com.udacity.jwdnd.course1.cloudstorage.model.File;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MaxUploadSizeExceededException;
 
 import java.util.List;
 
@@ -31,6 +32,9 @@ public class FileService {
     }
 
     public int insert(File file){
+        if(Integer.parseInt(file.getFilesize()) >= 1000000){
+            throw new MaxUploadSizeExceededException(Integer.parseInt(file.getFilesize()));
+        }
         if(fileIsAvailable(file)) {
             return -1;
         }
