@@ -18,7 +18,7 @@ public class NotesPage {
     @FindBy(id = "note-title")
     private WebElement noteTitle;
 
-    @FindBy(id = "note-title-edit")
+    @FindBy(id = "note-title")
     private WebElement noteTitleEdit;
 
     //@FindBy(xpath = "//*[@id='noteTitleText']")
@@ -29,7 +29,7 @@ public class NotesPage {
     @FindBy(id = "note-description")
     private WebElement noteDescription;
 
-    @FindBy(id = "note-description-edit")
+    @FindBy(id = "note-description")
     private WebElement noteDescriptionEdit;
 
     //@FindBy(xpath = "//*[@id='noteDescriptionText']")
@@ -46,7 +46,7 @@ public class NotesPage {
     @FindBy(id = "note-editBtn")
     private WebElement editNoteBtn;
 
-    @FindBy(id = "note-savechanges-btn")
+    @FindBy(id = "note-save-button")
     private WebElement saveEditNoteButton;
 
     @FindBy(id = "note-deleteBtn")
