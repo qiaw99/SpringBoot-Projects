@@ -2,16 +2,13 @@ package com.udacity.jdnd.course3.critter.entity;
 
 import com.udacity.jdnd.course3.critter.pet.PetType;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
 public class Pet {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private PetType type;
     private String name;
